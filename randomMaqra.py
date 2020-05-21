@@ -1,7 +1,7 @@
 import random
 
 
-def opeRand(surah, surah_name, ayat):
+def hafalkan(surah, surah_name, ayat):
     random_maqra = []
     for i in ayat:
         random_maqra.insert(random.randint(-len(ayat), len(ayat) - 1), i)
@@ -37,7 +37,7 @@ def showPrintAyat():
     elif surah == 1:
         surah_name = "Al-Fatihah"
         ayat = ["1-7"]
-        opeRand(surah, surah_name, ayat)
+        hafalkan(surah, surah_name, ayat)
     elif surah == 2:
         surah_name = "Al-Baqarah"
         ayat = ["1-7", "8-20", "21-29", '30-39', '40-46', '47-59', '60-61', '62-71', '72-82', '83-86', '87-96',
@@ -45,31 +45,31 @@ def showPrintAyat():
                 '168-176', '177-182', '183-188', '189-196', '197-210', '211-221', '222-228', '229-231', '232-235',
                 '236-242', '243-248', '249-253', '254-257', '258-260', '261-281', '282-283', '284-286'
                 ]
-        opeRand(surah, surah_name, ayat)
+        hafalkan(surah, surah_name, ayat)
 
     elif surah == 3:
         surah_name = "Ali Imran"
         ayat = ['1-9', '10-20', '21-30', '31-41', '42-54', '55-63', '64-71', '72-80', '81-91', '92-101', '102-109',
                 '110-120-', '121-129', '130-143', '144-148', '149-155', '156-171', '172-180', '181-189', '190-200']
-        opeRand(surah, surah_name, ayat)
+        hafalkan(surah, surah_name, ayat)
 
     elif surah == 4:
         surah_name = "An-Nisa"
         ayat = ['1-10', '11-14', '15-22', '23-25', '26-33', '34-42', '43-50', '51-59', '60-70', '71-76', '77-87',
                 '88-91', '92-96', '97-100', '101-104', '105-112', '113-115', '116-126', '127-134', '135-141', '142-152',
                 '153-162', '163-171', '172-176']
-        opeRand(surah, surah_name, ayat)
+        hafalkan(surah, surah_name, ayat)
 
     elif surah == 5:
         surah_name = "Al-Maaidah"
         ayat = ['1-5', '6-11', '12-19', '20-26', '27-34', '35-43', '44-50', '51-56', '57-66', '67-77', '78-86', '87-93',
                 '94-100', '101-108', '109-115', '116-120']
-        opeRand(surah, surah_name, ayat)
+        hafalkan(surah, surah_name, ayat)
 
     elif surah == 6:
         surah_name = "Al-An'am"
         ayat = ['1-10', '11-20', '21-30', '31-41', '42-50', '51-55']
-        opeRand(surah, surah_name, ayat)
+        hafalkan(surah, surah_name, ayat)
 
     else:
         pass
