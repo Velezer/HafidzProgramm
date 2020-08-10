@@ -7,11 +7,14 @@ def hafalkan(surah, surah_name, ayat):
         random_maqra.insert(random.randint(-len(ayat), len(ayat) - 1), i)
     rentang_ayat = random_maqra[random.randint(-len(ayat), len(ayat) - 1)]
     print(surah_name, '/', surah, ':', rentang_ayat)
-    awal_akhir = rentang_ayat.split('-')
-    jumlah_hafal = random.randint(0, int(awal_akhir[1]) - int(awal_akhir[0]) + 1)
+
+    awal, akhir = rentang_ayat.split('-')
+    awal, akhir = int(awal), int(akhir)
+
+    jumlah_hafal = random.randint(0, akhir - awal + 1)
     print(f"Hafalkan {jumlah_hafal} ayat di bawah ini")
     for i in range(jumlah_hafal):
-        nomer_ayat = random.randint(int(awal_akhir[0]), int(awal_akhir[1]))
+        nomer_ayat = random.randint(awal, akhir)
         print(surah_name, '/', surah, ':', nomer_ayat)
     print('\n')
     if not is_stop:
@@ -68,7 +71,7 @@ def showPrintAyat():
 
     elif surah == 6:
         surah_name = "Al-An'am"
-        ayat = ['1-10', '11-20', '21-30', '31-41', '42-50', '51-55', '56-60']
+        ayat = ['1-10', '11-20', '21-30', '31-41', '42-50', '51-55', '56-60', '61-70']
         hafalkan(surah, surah_name, ayat)
 
     else:
