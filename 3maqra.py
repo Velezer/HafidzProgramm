@@ -1,6 +1,10 @@
 import random
 
 quran = {
+    0: {
+        'surat': "",
+        'maqra': [""]
+    },
     1: {
         'surat': "Al-Fatihah",
         'maqra': ["1-7"]
@@ -32,24 +36,41 @@ quran = {
     6: {
         'surat': "Al-An'am",
         'maqra': ['1-10', '11-20', '21-30', '31-41', '42-50', '51-55', '56-60', '61-70', '71-82', '83-90', '91-94',
-                  '95-100', '101-110', '111-121', '122-129', '130-140']
+                  '95-100', '101-110', '111-121', '122-129', '130-140', '141-144']
+    },
+    7: {
+        'surat': "",
+        'maqra': ['']
     },
 }
 
-try:
-    rand_surat = random.randint(1, 114)
-    print("Surat:", quran[rand_surat]['surat'])
 
-    maqra = len(quran[rand_surat]['maqra'])
-    rand_maqra = random.randint(0, maqra - 1)
-    if maqra == 1:
-        print("Ayat:", quran[rand_surat]['maqra'][0])
+def tampil3Maqra(surat, maqra_ke):
+    if maqra_ke == 0:
+        surat -= 1
+        print(f"Q.S. {quran[surat]['surat']} : {quran[surat]['maqra'][maqra_ke - 1]}")
+        surat += 1
     else:
-        if rand_maqra == maqra - 1:
-            rand_maqra = -1
-        print("Ayat:", quran[rand_surat]['maqra'][rand_maqra - 1])
-        print("Ayat:", quran[rand_surat]['maqra'][rand_maqra])
-        print("Ayat:", quran[rand_surat]['maqra'][rand_maqra + 1])
+        print(f"Q.S. {quran[surat]['surat']} : {quran[surat]['maqra'][maqra_ke - 1]}")
 
-except KeyError:
-    print('Napas dulu bro')
+    print(f"Q.S. {quran[surat]['surat']} : {quran[surat]['maqra'][maqra_ke]}")
+
+    if maqra_ke == len(quran[surat]['maqra']) - 1:
+        surat += 1
+        maqra_ke = -1
+        print(f"Q.S. {quran[surat]['surat']} : {quran[surat]['maqra'][maqra_ke + 1]}")
+    else:
+        print(f"Q.S. {quran[surat]['surat']} : {quran[surat]['maqra'][maqra_ke + 1]}")
+
+
+rand_surat = random.randint(1, 114)
+
+maqra = len(quran[rand_surat]['maqra'])
+rand_maqra = random.randint(0, maqra - 1)
+tampil3Maqra(rand_surat, rand_maqra)
+
+# try:
+#
+#
+# except KeyError:
+#     print('Napas dulu bro')
