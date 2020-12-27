@@ -31,7 +31,8 @@ def showPrintAyat():
     for i in range(115):
         surah2.insert(random.randint(0 - i, 0 + i), surah[random.randint(-len(surah), len(surah) - 1)])
 
-    surah = surah[random.randint(-len(surah), len(surah) - 1)]
+    #surah = surah[random.randint(-len(surah), len(surah) - 1)]
+    surah = surah2[random.randint(-len(surah2), len(surah2) - 1)]
 
     if surah == 0:
         is_stop = True
