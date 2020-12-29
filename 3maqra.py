@@ -57,12 +57,24 @@ def tampil3Maqra(surat, maqra_ke):
     tampilSatuMaqra(surat + 1, 0) if maqra_ke == last_maqra else tampilSatuMaqra(surat, maqra_ke+1)
 
 
-rand_surat = random.randint(1, 114)
+def lastMaqra(surat):
+    try:
+        return len(quran[surat]['maqra']) - 1
+    except KeyError:
+        return False
 
-last_maqra = len(quran[rand_surat]['maqra']) - 1
+
+rand_surat = random.randint(1, 114)
+last_maqra = lastMaqra(rand_surat)
 rand_maqra = random.randint(0, last_maqra)
 
 try:
     tampil3Maqra(rand_surat, rand_maqra)
 except KeyError:
     pass
+
+if not last_maqra:
+    rand_surat = random.randint(1, 114)
+    last_maqra = lastMaqra(rand_surat)
+    rand_maqra = random.randint(0, last_maqra)
+    exit() if not last_maqra else tampilSatuMaqra(rand_surat, rand_maqra)
