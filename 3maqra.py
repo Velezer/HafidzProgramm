@@ -36,7 +36,7 @@ quran = {
     6: {
         'surat': "Al-An'am",
         'maqra': ['1-10', '11-20', '21-30', '31-41', '42-50', '51-55', '56-60', '61-70', '71-82', '83-90', '91-94',
-                  '95-100', '101-110', '111-121', '122-129', '130-140', '141-144', '145-150', '151-154']
+                  '95-100', '101-110', '111-121', '122-129', '130-140', '141-144', '145-150', '151-154', '155-165']
     },
     7: {
         'surat': "",
@@ -59,9 +59,9 @@ def tampil3Maqra(surat, maqra_ke):
 
 def lastMaqra(surat):
     try:
-        return len(quran[surat]['maqra']) - 1 # return last maqra
+        return len(quran[surat]['maqra']) - 1 # last index of maqra
     except KeyError:
-        return False  # Maqra Not Found
+        return False  # if Maqra Not Found
 
 
 rand_surat = random.randint(1, 114)
@@ -73,8 +73,9 @@ try:
 except KeyError:
     pass
 
-if not last_maqra: # maqra not found
+if not last_maqra:  # maqra not found
     rand_surat = random.randint(1, 114)
     last_maqra = lastMaqra(rand_surat)
     rand_maqra = random.randint(0, last_maqra)
     exit() if not last_maqra else tampilSatuMaqra(rand_surat, rand_maqra)
+
