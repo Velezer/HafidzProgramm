@@ -77,6 +77,11 @@ def showPrintAyat():
                 '95-100', '101-110', '111-121', '122-129', '130-140', '141-144', '145-150', '151-154', '155-165']
         hafalkan(surah, surah_name, ayat)
 
+    elif surah == 7:
+        surah_name = "Al-A'raf"
+        ayat = ['1-10']
+        hafalkan(surah, surah_name, ayat)
+
     else:
         pass
 
