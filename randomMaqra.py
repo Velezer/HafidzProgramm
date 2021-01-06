@@ -87,7 +87,7 @@ def showPrintAyat():
 
 
 is_stop = False
-juz = random.randint(0, 8)
+juz = random.randint(0, 7)
 repeater = juz
 for repeating in range(repeater):
     if showPrintAyat():
