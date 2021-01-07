@@ -79,7 +79,7 @@ def showPrintAyat():
 
     elif surah == 7:
         surah_name = "Al-A'raf"
-        ayat = ['1-10']
+        ayat = ['1-10', '11-25']
         hafalkan(surah, surah_name, ayat)
 
     else:
