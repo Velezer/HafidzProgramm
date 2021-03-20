@@ -92,3 +92,5 @@ repeater = juz
 for repeating in range(repeater):
     if showPrintAyat():
         break
+
+# test spck push
