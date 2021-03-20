@@ -93,4 +93,4 @@ for repeating in range(repeater):
     if showPrintAyat():
         break
 
-# test spck push
+# test spck push pull
