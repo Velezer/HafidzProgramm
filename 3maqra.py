@@ -52,21 +52,17 @@ i = choosed_surah
 
 maqra_list = quran[i]['maqra_list']
 
-print(maqra.index)
 
 choosed_maqra = choose_from(range(len(maqra_list)))
 j = choosed_maqra
 
 def print_three_maqra(i, j):
-    try:
-        print_one_maqra(i-1,j-1) if j==0 else print_one_maqra(i, j-1)
-    except: pass
-
-    print_one_maqra(i, j)
-    
-    try :
-        print_one_maqra(i+1, 0) if j==len(maqra_list)-1 else print_one_maqra(i, j+1)
-    except Exception as e: print(e)
+    for _ in range(3):
+        print_one_maqra(i, j)
+        j += 1
+        if j == len(maqra_list):
+            break
+        
 
 
 print_three_maqra(i,j)
