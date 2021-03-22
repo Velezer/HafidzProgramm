@@ -39,11 +39,12 @@ quran = {
         'maqra_list': ['1-10', '11-25', '26-31']
     },
 }
+
 def choose_from(stuff):
     return random.choice(tuple(stuff))
 
 
-def print_one_maqra(i, j):
+def print_one_maqra(j):
     print(f"Q.S. {surah_name} : {maqra_list[j]}")
 
 
@@ -53,21 +54,14 @@ i = choosed_surah
 surah_name = quran[i]['surah_name']
 maqra_list = quran[i]['maqra_list']
 
-
 choosed_maqra = choose_from(range(len(maqra_list)))
 j = choosed_maqra
 
-def print_three_maqra(i, j):
+def print_three_maqra(j):
     for _ in range(3):
-        print_one_maqra(i, j)
+        print_one_maqra(j)
         j += 1
         if j == len(maqra_list):
             break
-        
 
-
-print_three_maqra(i,j)
-
-
-
-
+print_three_maqra(j)
