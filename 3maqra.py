@@ -44,12 +44,13 @@ def choose_from(stuff):
 
 
 def print_one_maqra(i, j):
-    print(f"Q.S. {quran[i]['surah_name']} : {maqra_list[j]}")
+    print(f"Q.S. {surah_name} : {maqra_list[j]}")
 
 
 choosed_surah = choose_from(quran)
 i = choosed_surah
 
+surah_name = quran[i]['surah_name']
 maqra_list = quran[i]['maqra_list']
 
 
