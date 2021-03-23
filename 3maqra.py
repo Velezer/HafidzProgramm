@@ -40,28 +40,38 @@ quran = {
     },
 }
 
-def choose_from(stuff):
-    return random.choice(tuple(stuff))
+choose_from = lambda stuff: random.choice(tuple(stuff))
+
+print_one_maqra = lambda surah,maqra: print(f"Q.S. {surah} : {maqra}")
 
 
-def print_one_maqra(j):
-    print(f"Q.S. {surah_name} : {maqra_list[j]}")
+def surah_wa_maqra():
+    choosed_surah = choose_from(quran)
+    i = choosed_surah
+    
+    surah_name = lambda i: quran[i]['surah_name']
+    maqra_list = lambda i: quran[i]['maqra_list']
+    
+    choosed_maqra = choose_from(range(len(maqra_list(i))))
+    j = choosed_maqra
+    
+    tembus = j+3 > len(maqra_list(i)) and i < len(quran)
+    
+    surahs = [surah_name(i)]
+    maqras = [[maqra_list(i)[j+k] for k in range(3) if j+k < len(maqra_list(i))]]
+   
+    if tembus:
+        i += 1
+        surahs.append(surah_name(i))
+        maqras.append([maqra_list(i)[l] for l in range(3+j-len(maqra_list(i-1)))])
+    
+    return surahs, maqras
 
+surahs, maqras = surah_wa_maqra()
 
-choosed_surah = choose_from(quran)
-i = choosed_surah
+def print_three_maqra(surahs, maqras):
+    for i in range(len(surahs)):
+        for maqra in maqras[i]:
+            print_one_maqra(surahs[i], maqra)
 
-surah_name = quran[i]['surah_name']
-maqra_list = quran[i]['maqra_list']
-
-choosed_maqra = choose_from(range(len(maqra_list)))
-j = choosed_maqra
-
-def print_three_maqra(j):
-    for _ in range(3):
-        print_one_maqra(j)
-        j += 1
-        if j == len(maqra_list):
-            break
-
-print_three_maqra(j)
+print_three_maqra(surahs, maqras)
