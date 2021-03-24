@@ -51,18 +51,16 @@ def surah_wa_maqra():
     
     surah_name = lambda i: quran[i]['surah_name']
     maqra_list = lambda i: quran[i]['maqra_list']
-    
-    maqra_surah = maqra_list(i)
-    
-    choosed_maqra = choose_from(range(len(maqra_surah)))
+
+    choosed_maqra = choose_from(range(len(maqra_list(i))))
     j = choosed_maqra
     
     surahs = [surah_name(i)]
-    maqras = [maqra_surah[j:j+3]]
+    maqras = [maqra_list(i)[j:j+3]]
    
     if len(maqras[0]) < 3 and i < len(quran):
         surahs.append(surah_name(i+1))
-        maqras.append(maqra_list(i+1)[:j+3-len(maqra_surah)])
+        maqras.append(maqra_list(i+1)[:3-len(maqras[0])])
     
     return surahs, maqras
 
