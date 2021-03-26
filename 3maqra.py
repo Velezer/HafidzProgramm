@@ -42,33 +42,14 @@ quran = {
 
 choose_from = lambda stuff: random.choice(tuple(stuff))
 
-print_one_maqra = lambda surah,maqra: print(f"Q.S. {surah} : {maqra}")
+kotak = []
+for v in quran.values():
+    surah = v['surah_name']
+    maqra_list = v['maqra_list']
+    for maqra in maqra_list:
+        kotak.append(f'Q.S. {surah} : {maqra}')
+        
+i = choose_from(range(len(kotak)))
 
-
-def surah_wa_maqra():
-    choosed_surah = choose_from(quran)
-    i = choosed_surah
-    
-    surah_name = lambda i: quran[i]['surah_name']
-    maqra_list = lambda i: quran[i]['maqra_list']
-
-    choosed_maqra = choose_from(range(len(maqra_list(i))))
-    j = choosed_maqra
-    
-    surahs = [surah_name(i)]
-    maqras = [maqra_list(i)[j:j+3]]
-   
-    if len(maqras[0]) < 3 and i < len(quran):
-        surahs.append(surah_name(i+1))
-        maqras.append(maqra_list(i+1)[:3-len(maqras[0])])
-    
-    return surahs, maqras
-
-surahs, maqras = surah_wa_maqra()
-
-def print_three_maqra(surahs, maqras):
-    for i in range(len(surahs)):
-        for maqra in maqras[i]:
-            print_one_maqra(surahs[i], maqra)
-
-print_three_maqra(surahs, maqras)
+for baca in kotak[i:i+3]:
+    print(baca)
