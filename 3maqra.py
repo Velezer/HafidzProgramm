@@ -1,5 +1,6 @@
 import random
 
+
 quran = {
     1: {
         'surah_name': "Al-Fatihah",
