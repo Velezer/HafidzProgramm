@@ -52,8 +52,10 @@ for v in quran.values():
         
 i = choose_from(range(len(kotak)))
 
+num = len(kotak) + i
+num //= len(quran)
 
-if choose_from(range(114+i)) in quran:
+if choose_from(range(num)) in quran:
     for baca in kotak[i:i+3]:
         print(baca)
 
